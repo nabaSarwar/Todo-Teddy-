@@ -23,7 +23,6 @@ class TaskItemViewHolder(
     }
 
     fun bindTaskItem(taskItem: TaskItem) {
-        // Assign the taskItem to the class-level variable
         this.taskItem = taskItem
 
         binding.name.text = taskItem.name
