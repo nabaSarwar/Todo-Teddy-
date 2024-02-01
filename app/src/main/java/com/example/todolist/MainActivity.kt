@@ -32,6 +32,9 @@ class MainActivity : AppCompatActivity(), TaskItemClickListener
             binding.todoListRecyclerView.apply {
                 layoutManager = LinearLayoutManager(applicationContext)
                 adapter = TaskItemAdapter(it, mainActivity)
+
+
+
             }
         }
     }
@@ -44,5 +47,10 @@ class MainActivity : AppCompatActivity(), TaskItemClickListener
     override fun completeTaskItem(taskItem: TaskItem)
     {
         taskViewModel.setCompleted(taskItem)
+    }
+
+
+    override fun deleteTaskItem(taskItem: TaskItem) {
+        taskViewModel.deleteTaskItem(taskItem)
     }
 }

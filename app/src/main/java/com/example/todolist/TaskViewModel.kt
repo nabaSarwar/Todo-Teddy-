@@ -20,7 +20,11 @@ class TaskViewModel: ViewModel()
         list!!.add(newTask)
         taskItems.postValue(list)
     }
-
+    fun deleteTaskItem(taskItem: TaskItem) {
+        val list = taskItems.value
+        list?.remove(taskItem)
+        taskItems.postValue(list)
+    }
     fun updateTaskItem(id: UUID, name: String, desc: String, dueTime: LocalTime?)
     {
         val list = taskItems.value
@@ -39,4 +43,6 @@ class TaskViewModel: ViewModel()
             task.completedDate = LocalDate.now()
         taskItems.postValue(list)
     }
+
+
 }
